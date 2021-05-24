@@ -24,7 +24,9 @@ source-repository head
 
 library
   exposed-modules:
+      BigStepNBE
       Examples
+      SmallStepNBE
       ULC
   other-modules:
       Paths_StepULC

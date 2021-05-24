@@ -2,8 +2,11 @@ import ULC
 import Examples
 import Criterion.Main
 
+import qualified BigStepNBE as BSNBE
+
 main = defaultMain
-    [ bgroup "sem1"
+    [
+      bgroup "sem1"
         [ bench "fac 4" $ nf semantic1 (facN 4)
         ]
     , bgroup "sem1-1"
@@ -22,6 +25,11 @@ main = defaultMain
         [ bench "fac 4" $ nf semantic2_2 (facN 4)
         ]
     , bgroup "sem3"
-        [ bench "fac 4" $ nf semantic3 (facN 4)
+        [
+          bench "fac 4" $ nf semantic3 (facN 4)
+        ]
+    , bgroup "bigstep nbe"
+        [
+          bench "fac 4" $ nf BSNBE.nf (BSNBE.facN 4)
         ]
     ]
